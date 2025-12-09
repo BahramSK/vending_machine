@@ -1,0 +1,17 @@
+Checking if Git is installed
+git --version
+
+Viewing all cammits
+git log
+
+Viewing file status and changes
+git status
+
+Adding cammit
+git commit -m ""
+
+Return to last cammit
+git reset --hard HEAD
+
+Delete last commit
+git reset --soft HEAD~1
