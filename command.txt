@@ -1,17 +1,26 @@
-Checking if Git is installed
+Checking if Git is installed:
 git --version
 
-Viewing all cammits
+Viewing all cammits:
 git log
 
-Viewing file status and changes
+Viewing file status and changes:
 git status
 
-Adding cammit
+Adding cammit:
 git commit -m ""
 
-Return to last cammit
+Return to last cammit:
 git reset --hard HEAD
 
-Delete last commit
+Deleting the last commit without losing the current code:
 git reset --soft HEAD~1
+
+Shows all Git-tracked files:
+git ls-files
+
+Adding files for commits:
+git add
+
+Push changes to the remote repository:
+git push
