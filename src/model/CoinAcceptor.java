@@ -10,19 +10,25 @@ public class CoinAcceptor extends PaymentAcceptor {
 
     @Override
     public void showMenu() {
-        System.out.println("а - Внести монету");
+        System.out.println("Введите номинал монеты");
     }
 
     @Override
     public void handleInput() {
         Scanner sc = new Scanner(System.in);
-        String cmd = sc.nextLine();
-
-        if (cmd.equalsIgnoreCase("a")) {
-            System.out.print("Введите номинал монеты: ");
-            int coin = Integer.parseInt(sc.nextLine());
-            amount += coin;
-            System.out.println("Баланс: " + amount);
+        while (true) {
+            try {
+                int coin = Integer.parseInt(sc.nextLine());
+                if (coin <= 0) {
+                    System.out.println("Сумма должна быть положительной! Попробуйте снова:");
+                    continue;
+                }
+                amount += coin;
+                System.out.println("Баланс пополнен. Новый баланс: " + amount);
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Некорректный ввод! Введите число:");
+            }
         }
     }
 }
