@@ -2,15 +2,15 @@ package model;
 
 import java.util.Scanner;
 
-public class CoinAcceptor extends PaymentAcceptor {
+public class CashAcceptor extends PaymentAcceptor{
 
-    public CoinAcceptor(int amount) {
+    public CashAcceptor(int amount) {
         super(amount);
     }
 
     @Override
     public void showMenu() {
-        System.out.println("Введите номинал монеты");
+        System.out.println("Введите номинал купюры:");
     }
 
     @Override
@@ -18,12 +18,12 @@ public class CoinAcceptor extends PaymentAcceptor {
         Scanner sc = new Scanner(System.in);
         while (true) {
             try {
-                int coin = Integer.parseInt(sc.nextLine());
-                if (coin <= 0) {
+                int cash = Integer.parseInt(sc.nextLine());
+                if (cash <= 0) {
                     System.out.println("Сумма должна быть положительной! Попробуйте снова:");
                     continue;
                 }
-                amount += coin;
+                amount += cash;
                 System.out.println("Баланс пополнен. Новый баланс: " + amount);
                 break;
             } catch (NumberFormatException e) {
