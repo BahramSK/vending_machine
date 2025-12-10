@@ -99,14 +99,15 @@ public class AppRunner {
                     acceptor.setAmount(acceptor.getAmount() - products.get(i).getPrice());
                     print("Вы купили " + products.get(i).getName());
                     break;
-                } else if ("h".equalsIgnoreCase(action)) {
-                    isExit = true;
-                    break;
                 }
             }
         } catch (IllegalArgumentException e) {
-            print("Недопустимая буква. Попрбуйте еще раз.");
-            chooseAction(products);
+            if ("h".equalsIgnoreCase(action)) {
+                isExit = true;
+            } else {
+                print("Недопустимая буква. Попрбуйте еще раз.");
+                chooseAction(products);
+            }
         }
     }
 
